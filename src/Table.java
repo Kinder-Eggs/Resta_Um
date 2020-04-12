@@ -8,80 +8,95 @@ public class Table {
             new Piece(true), new Piece(true), new Piece(true), new Piece(true),
             new Piece(true), new Piece(true), new Piece(true), new Piece(true),
             new Piece(true)};
+    int[] positions = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
+            27, 28, 29, 30, 31, 32};
+
+
+    Table() {
+        for(int i = 0; i < 33; i++) {
+            pieces[i].setPos(i);
+        }
+    }
 
     void printTable() {
-        for(int i = 0; i < 7; i++) {
-            for(int j = 0; j < 8; j++) {
-                if (j == 0) {
-                    System.out.print(-(i - 7));
-                } else {
-                   switch (i){
-                       case 0:
-                           if (j != 1 && j != 2 && j != 6 && j != 7){
-                               if(pieces[j-3].alive) {
-                                   System.out.print("P");
-                               } else {
-                                   System.out.print("-");
-                               }
-                           } else {
-                               System.out.print(" ");
-                           }break;
-                       case 1:
-                           if (j != 1 && j != 2 && j != 6 && j != 7) {
-                               if(pieces[j].alive) {
-                                   System.out.print("P");
-                               } else {
-                                   System.out.print("-");
-                               }
-                           } else {
-                               System.out.print(" ");
-                           }break;
-                       case 2:
-                           if(pieces[j+5].alive) {
-                               System.out.print("P");
-                           } else {
-                               System.out.print("-");
-                           }break;
-                       case 3:
-                           if(pieces[j+12].alive) {
-                               System.out.print("P");
-                           } else {
-                               System.out.print("-");
-                           }break;
-                       case 4:
-                           if(pieces[j+19].alive) {
-                               System.out.print("P");
-                           } else {
-                               System.out.print("-");
-                           }break;
-                       case 5:
-                           if (j != 1 && j != 2 && j != 6 && j != 7) {
-                               if(pieces[j+24].alive) {
-                                   System.out.print("P");
-                               } else {
-                                   System.out.print("-");
-                               }
-                           } else {
-                               System.out.print(" ");
-                           }break;
-                       case 6:
-                           if (j != 1 && j != 2 && j != 6 && j != 7) {
-                               if(pieces[j+27].alive) {
-                                   System.out.print("P");
-                               } else {
-                                   System.out.print("-");
-                               }
-                           } else {
-                               System.out.print(" ");
-                           }break;
-                    }
-                }
-                if(i < 6 || j < 5) {
-                    System.out.print(" ");
-                }
+        System.out.print("7     ");
+        int i = 0;
+        while(i < 3) {
+            if (pieces[positions[i]].alive) {
+                System.out.print("P");
+            } else {
+                System.out.print("-");
             }
-            System.out.println();
+            System.out.print(" ");
+            i++;
         }
+        System.out.println("    ");
+        System.out.print("6     ");
+        while(i < 6) {
+            if (pieces[positions[i]].alive) {
+                System.out.print("P");
+            } else {
+                System.out.print("-");
+            }
+            System.out.print(" ");
+            i++;
+        }
+        System.out.println("    ");
+        System.out.print("5 ");
+        while(i < 13) {
+            if (pieces[positions[i]].alive) {
+                System.out.print("P");
+            } else {
+                System.out.print("-");
+            }
+            System.out.print(" ");
+            i++;
+        }
+        System.out.println();
+        System.out.print("4 ");
+        while(i < 20) {
+            if (pieces[positions[i]].alive) {
+                System.out.print("P");
+            } else {
+                System.out.print("-");
+            }
+            System.out.print(" ");
+            i++;
+        }
+        System.out.println();
+        System.out.print("3 ");
+        while(i < 27) {
+            if (pieces[positions[i]].alive) {
+                System.out.print("P");
+            } else {
+                System.out.print("-");
+            }
+            System.out.print(" ");
+            i++;
+        }
+        System.out.println();
+        System.out.print("2     ");
+        while(i < 30) {
+            if (pieces[positions[i]].alive) {
+                System.out.print("P");
+            } else {
+                System.out.print("-");
+            }
+            System.out.print(" ");
+            i++;
+        }
+        System.out.println();
+        System.out.print("1     ");
+        while(i < 33) {
+            if (pieces[positions[i]].alive) {
+                System.out.print("P");
+            } else {
+                System.out.print("-");
+            }
+            System.out.print(" ");
+            i++;
+        }
+        System.out.println();
         System.out.println("  a b c d e f g");
     }
 }
